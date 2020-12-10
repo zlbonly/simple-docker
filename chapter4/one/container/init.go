@@ -19,10 +19,6 @@ func RunContainerInitProcess() error {
 
 	setUpMount()
 
-	/*
-		defaultMountFlags := syscall.MS_NOEXEC | syscall.MS_NOSUID | syscall.MS_NODEV
-		syscall.Mount("proc", "/proc", "proc", uintptr(defaultMountFlags), "")
-	*/
 	path, err := exec.LookPath(cmdArray[0])
 	if err != nil {
 		log.Errorf("Exec loop path error %v", err)
@@ -59,11 +55,8 @@ func setUpMount() {
 	pivotRoot(pwd)
 
 	//mount proc
-	//声明你要这个新的mount namespace独立。
-	syscall.Mount("", "/", "", syscall.MS_PRIVATE|syscall.MS_REC, "")
-
-	defualtMountFlags := syscall.MS_NOEXEC | syscall.MS_NOSUID | syscall.MS_NODEV
-	syscall.Mount("proc", "/proc", "proc", uintptr(defualtMountFlags), "")
+	defaultMountFlags := syscall.MS_NOEXEC | syscall.MS_NOSUID | syscall.MS_NODEV
+	syscall.Mount("proc", "/proc", "proc", uintptr(defaultMountFlags), "")
 
 	syscall.Mount("tmpfs", "/dev", "tmpfs", syscall.MS_NOSUID|syscall.MS_STRICTATIME, "mode=755")
 }
