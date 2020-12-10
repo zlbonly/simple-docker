@@ -1,8 +1,8 @@
 package main
 
 import (
-	"example/chapter3/two/cgroups/subsystems"
-	"example/chapter3/two/container"
+	"example/chapter4/one/cgroups/subsystems"
+	"example/chapter4/one/container"
 	"fmt"
 	log "github.com/sirupsen/logrus"
 	"github.com/urfave/cli"

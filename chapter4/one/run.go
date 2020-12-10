@@ -1,9 +1,9 @@
 package main
 
 import (
-	"example/chapter3/two/cgroups"
-	"example/chapter3/two/cgroups/subsystems"
-	"example/chapter3/two/container"
+	"example/chapter4/one/cgroups"
+	"example/chapter4/one/cgroups/subsystems"
+	"example/chapter4/one/container"
 	log "github.com/sirupsen/logrus"
 	"os"
 	"strings"
