@@ -1,7 +1,7 @@
 package cgroups
 
 import (
-	"example/chapter3/two/cgroups/subsystems"
+	"example/chapter4/one/cgroups/subsystems"
 	"github.com/sirupsen/logrus"
 )
 
